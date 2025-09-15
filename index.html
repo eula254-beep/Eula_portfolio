@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>MyPortfolio - Eula Shalet</title>
+  <meta name="description"
+    content="Portfolio of Eula Shalet - Trainee Web Designer specializing in Bootstrap, WordPress, and JavaScript.">
+  <meta name="keywords" content="portfolio, web design, bootstrap, wordpress, javascript, frontend">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Live Code Background */
+    #code-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #0a0a0a;
+    }
+
+    </head>style>
+  /* ======= General Body Styling ======= */
+  body {
+    font-family: 'Inconsolata', monospace;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    scroll-behavior: smooth;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
+  .section-title h2 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #00ffd5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* ======= Hero Section ======= */
+  #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #00ffd5;
+    z-index: 1;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,213,0.2), transparent 70%);
+    animation: rotateBG 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 15px #00ffd5, 0 0 30px #00ff99;
+    z-index: 1;
+  }
+
+  #hero p.lead {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #00ffd5;
+    z-index: 1;
+  }
+
+  #hero .btn {
+    margin-top: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 5px #00ffd5;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+
+  #hero .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00ffd5, 0 0 30px #00ff99;
+  }
+
+  #hero .hero-panel {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 50px rgba(0, 255, 213, 0.3);
+    z-index: 1;
+  }
+
+  /* ======= Portfolio Cards Styling ======= */
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 255, 213, 0.3);
+  }
+
+  .card img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ======= Snippets / Other Sections ======= */
+  .snippet-card {
+    background: #111;
+    border: 1px solid #00ffd5;
+    color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .snippet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 213, 0.4);
+  }
+
+  .tools img {
+    transition: transform 0.3s ease;
+  }
+
+  .tools img:hover {
+    transform: scale(1.2);
+  }
+
+  /* ======= Section Background Variants ======= */
+  .bg-light {
+    background: #111;
+  }
+
+  /* ======= Responsive Adjustments ======= */
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 2.5rem;
+    }
+
+    #hero p.lead {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+
+<body class="index-page">
+
+  <!-- Live Code Background -->
+  <canvas id="code-background"></canvas>
+
+ <!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center sticky-top shadow-sm">
+  <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a href="#hero" class="logo d-flex align-items-center text-decoration-none">
+      <h1 class="sitename fw-bold portfolio-title">MyPortfolio</h1>
+    </a>
+
+    <!-- Navigation Menu -->
+    <nav id="navmenu" class="navmenu">
+      <ul class="d-flex gap-3 mb-0">
+        <li><a href="#hero" class="active nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#tools" class="nav-link">Tools</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#testimonials" class="nav-link">Feedback</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" style="font-size:1.5rem; color:#00ffd5; cursor:pointer;"></i>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .portfolio-title {
+    color: #00ffd5;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #00ffd5;
+  }
+  /* ======= Header Navigation Customizations ======= */
+  #header {
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 10, 0.8);
+    transition: all 0.4s ease;
+  }
+
+  #header.scrolled {
+    box-shadow: 0 8px 30px rgba(0, 255, 213, 0.4);
+    background: rgba(10, 10, 10, 0.95);
+  }
+  .navmenu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .navmenu ul li {
+    position: relative;
+  }
+
+  .navmenu ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #e0e0e0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .navmenu ul li a:hover,
+  .navmenu ul li a.active {
+    color: #00ffd5;
+    text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ff99;
+    transform: translateY(-2px);
+  }
+
+  /* Mobile Toggle */
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    .navmenu ul {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: rgba(0,0,0,0.95);
+      padding-top: 100px;
+      transition: 0.4s;
+      gap: 15px;
+    }
+
+    .navmenu ul.show {
+      right: 0;
+    }
+
+    .navmenu ul li a {
+      font-size: 1.2rem;
+      padding: 15px 20px;
+    }
+  }
+</style>
+
+<script>
+  // ======= Mobile Nav Toggle =======
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.navmenu ul');
+
+  mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // ======= Add Shadow on Scroll =======
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+  <!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center text-center">
+  <div class="container hero-panel" data-aos="fade-up">
+    <h1 class="fw-bold">Hello, I’m <span>Eula Shalet</span></h1>
+    <p class="lead">
+      I craft interactive, user-friendly websites that engage and inspire.  
+      Specialized in <strong>Bootstrap, WordPress, and JavaScript</strong> to deliver modern web solutions.
+    </p>
+    <div class="mt-4">
+      <a href="#portfolio" class="btn btn-light btn-lg me-2 hero-btn">
+        <i class="bi bi-eye me-1"></i> Explore My Projects
+      </a>
+      <a href="/assets/docs/Eula (1).pdf" class="btn btn-outline-light btn-lg hero-btn" target="_blank">
+        <i class="bi bi-file-earmark-person me-1"></i> Professional Highlights
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+  #about.about {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 80px 0;
+  }
+</style>
+
+<style>
+  /* Hero Section */
+  #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #00ffd5;
+    font-family: 'Inconsolata', monospace;
+    z-index: 1;
+  }
+
+  #hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ff99;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  #hero p.lead {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    text-shadow: 0 0 5px #00ffd5, 0 0 10px #00ff99;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+
+  #hero .btn.hero-btn {
+    margin-top: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #00ffd5;
+    transition: all 0.4s ease;
+  }
+
+  #hero .btn.hero-btn:hover {
+    box-shadow: 0 0 15px #00ffd5, 0 0 30px #00ff99;
+    transform: translateY(-3px);
+  }
+
+  #hero .hero-panel {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 50px;
+    border-radius: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeIn {
+    100% { opacity: 1;}
+  }
+</style>
+
+
+    <!-- ======= About Section ======= -->
+<section id="about" class="about" style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: #fff; padding: 80px 0;">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      
+      <!-- Profile Image -->
+      <div class="col-lg-4 text-center mb-4 mb-lg-0">
+        <img src="assets/img/profile pic.jpeg" class="img-fluid rounded-circle shadow-lg border border-3 border-info" alt="Profile picture" style="max-width:250px;">
+      </div>
+      
+      <!-- About Text -->
+      <div class="col-lg-8">
+        <h2 class="fw-bold" style="color:#00ffd5;">About Me</h2>
+        <p style="font-size:1.1rem; line-height:1.6;">
+          I’m a passionate web designer at <strong>FCA</strong>, crafting responsive and interactive websites using <strong>Bootstrap</strong> and <strong>WordPress</strong>.  
+          I am continuously expanding my skills in <strong>JavaScript (React & Node)</strong> to deliver engaging, user-friendly digital experiences.
+        </p>
+
+        <ul class="list-unstyled mt-3" style="font-size:1rem;">
+          <li><i class="bi bi-magic text-primary me-2"></i><strong>Focus:</strong> Web Design & Frontend Development</li>
+          <li><i class="bi bi-code-slash text-success me-2"></i><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript (React, Node), WordPress</li>
+          <li><i class="bi bi-award text-warning me-2"></i><strong>Projects:</strong> 2 Bootstrap + 2 WordPress Sites</li>
+          <li><i class="bi bi-lightbulb text-danger me-2"></i><strong>Learning:</strong> Advanced JavaScript & modern frameworks</li>
+        </ul>
+
+        <!-- Links -->
+        <p class="mt-4" style="font-size:1rem;">
+          Connect with me on 
+          <a href="https://www.linkedin.com/in/shirlette-eula-0bb3a4376/" target="_blank" style="color:#0e76a8; text-decoration:underline;">LinkedIn</a> 
+          or send me an email at 
+          <a href="mailto:eulashalet@example.com" style="color:#d44638; text-decoration:underline;">eulashalet@example.com</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Code Background Image -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.1; background:url('assets/img/code-background.png') no-repeat center center / cover;">
+  </div>
+</section>
+
+
+    <!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold" style="color:#0d47a1;">Portfolio</h2>
+      <p class="text-muted fst-italic">Showcasing selected projects I’ve completed during training.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Project 1: Hotel Website -->
+      <div class="col-lg-6">
+        <div class="card shadow-lg border-0 h-100" style="border-left: 5px solid #1976d2;" data-aos="fade-right">
+          <img src="/assets/img/hotel-site-screenshot.png" class="card-img-top" alt="Hotel Website Screenshot">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Hotel Booking Website</h5>
+            <p class="card-text text-muted">A modern, responsive hotel reservation website built with Bootstrap 5, featuring room listings and booking forms.</p>
+            <a href="https://github.com/eula254-beep/bootstrap_hotel.git" target="_blank" class="btn btn-outline-primary btn-sm me-2">
+              <i class="bi bi-github"></i> View Code
+            </a>
+            <a href="https://eula254-beep.github.io/bootstrap_hotel/" target="_blank" class="btn btn-primary btn-sm">
+              <i class="bi bi-box-arrow-up-right"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Hospital Website -->
+      <div class="col-lg-6">
+        <div class="card shadow-lg border-0 h-100" style="border-top: 5px solid #0288d1;" data-aos="fade-left">
+          <img src="/assets/img/hospital-site screenshot.png" class="card-img-top" alt="Hospital Website Screenshot">
+          <div class="card-body">
+            <h5 class="card-title text-info">Hospital Management Site</h5>
+            <p class="card-text text-muted">A responsive healthcare website with appointment booking, services overview, and interactive forms.</p>
+            <a href="https://github.com/eula254-beep/hospital-bootstrap.git" target="_blank" class="btn btn-outline-info btn-sm me-2">
+              <i class="bi bi-github"></i> View Code
+            </a>
+            <a href="https://eula254-beep.github.io/hospital-bootstrap/" target="_blank" class="btn btn-info btn-sm">
+              <i class="bi bi-box-arrow-up-right"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+     
+</section>
+
+<!-- Add CSS for hover animation -->
+<style>
+  .card:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+  }
+</style>
+
+    
+  <!-- ======= Project Links Section ======= -->
+<section id="project-links" class="project-links py-5" style="background: #f0f4f8;">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center mb-3" style="color: #007bff;">🔗 Explore My Projects</h2>
+    <p class="text-muted mb-5 fst-italic small text-center">
+      Click below to view my live projects and demos.
+    </p>
+
+    <div class="row g-4">
+      <!-- Hotel Website -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 h-100 project-card" style="transition: transform 0.3s, box-shadow 0.3s; border-radius: 15px;">
+          <div class="card-body text-center" style="background: linear-gradient(135deg, #00c6ff, #0072ff); color: white;">
+            <h5 class="card-title fw-bold mb-3"><i class="bi bi-building me-2"></i>Hotel Website (Bootstrap)</h5>
+            <p class="card-text mb-4">Modern hotel booking & reservation site built with Bootstrap.</p>
+            <a href="https://github.com/eula254-beep/bootstrap_hotel.git" target="_blank" class="btn btn-dark me-2 mb-2">
+              <i class="bi bi-github"></i> View Code
+            </a>
+            <a href="https://eula254-beep.github.io/bootstrap_hotel/" target="_blank" class="btn btn-light mb-2">
+              <i class="bi bi-box-arrow-up-right"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital Website -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 h-100 project-card" style="transition: transform 0.3s, box-shadow 0.3s; border-radius: 15px;">
+          <div class="card-body text-center" style="background: linear-gradient(135deg, #ff758c, #ff7eb3); color: white;">
+            <h5 class="card-title fw-bold mb-3"><i class="bi bi-hospital me-2"></i>Hospital Website (Bootstrap)</h5>
+            <p class="card-text mb-4">Responsive hospital management & services site designed with Bootstrap.</p>
+            <a href="https://github.com/eula254-beep/hospital-bootstrap.git" target="_blank" class="btn btn-dark me-2 mb-2">
+              <i class="bi bi-github"></i> View Code
+            </a>
+            <a href="https://eula254-beep.github.io/hospital-bootstrap/" target="_blank" class="btn btn-light mb-2">
+              <i class="bi bi-box-arrow-up-right"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Card hover effect */
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .project-card .btn {
+      transition: all 0.3s ease;
+    }
+    .project-card .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</section>
+
+   <!-- WordPress Projects -->
+<section id="wordpress-projects" class="py-5" style="background: #f0f4f8;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color:#0073aa;"> WordPress Projects</h2>
+      <p class="text-muted fst-italic">Check out my WordPress-based projects with live demo videos.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Education Website Demo -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 h-100 project-card" style="border-radius:15px; transition: transform 0.3s, box-shadow 0.3s;">
+          <div class="card-body text-center" style="background: linear-gradient(135deg, #00c6ff, #0072ff); color:white;">
+            <h4 class="card-title mb-3">Education Website</h4>
+            <p class="card-text mb-3">A WordPress project I built for managing education content and courses.</p>
+            <div class="ratio ratio-16x9 mb-3">
+              <iframe src="https://drive.google.com/file/d/1dECVA9CL2jURbh2Unem4HBocq18AsxY7/preview" 
+                      title="Education Website Demo" 
+                      allow="autoplay"></iframe>
+            </div>
+            <a href="https://drive.google.com/file/d/1dECVA9CL2jURbh2Unem4HBocq18AsxY7/view" target="_blank" 
+               class="btn btn-light btn-sm"><i class="bi bi-box-arrow-up-right"></i> Open Video</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Website Demo -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 h-100 project-card" style="border-radius:15px; transition: transform 0.3s, box-shadow 0.3s;">
+          <div class="card-body text-center" style="background: linear-gradient(135deg, #ff758c, #ff7eb3); color:white;">
+            <h4 class="card-title mb-3">Business Website</h4>
+            <p class="card-text mb-3">A WordPress project I developed for showcasing business services.</p>
+            <div class="ratio ratio-16x9 mb-3">
+              <iframe src="https://drive.google.com/file/d/1O85MDbfnDme5sUSibhdjgTm5ktdG1Lht/preview" 
+                      title="Business Website Demo" 
+                      allow="autoplay"></iframe>
+            </div>
+            <a href="https://drive.google.com/file/d/1O85MDbfnDme5sUSibhdjgTm5ktdG1Lht/view" target="_blank" 
+               class="btn btn-light btn-sm"><i class="bi bi-box-arrow-up-right"></i> Open Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .project-card .btn {
+      transition: all 0.3s ease;
+    }
+    .project-card .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</section>
+
+
+
+   <!-- ======= Code Snippets Section ======= -->
+<section id="snippets" class="snippets-section py-5">
+  <div class="container" data-aos="fade-up">
+    
+    <h2 class="text-center mb-3">💻 Code Snippets</h2>
+    <p class="text-center text-muted mb-5 fst-italic small">
+      Selected class assignments demonstrating key programming concepts.
+    </p>
+
+    <div class="row gy-4">
+
+      <!-- Snippet 1: Control Statements -->
+      <div class="col-md-6">
+        <div class="snippet-card p-4 rounded shadow-lg" style="border-left: 5px solid #1976d2;" data-aos="fade-right">
+          <h4 class="mb-3 text-primary">Control Statements</h4>
+          <p>This snippet demonstrates a basic <strong>if...else statement</strong> in JavaScript, helping make decisions in a program based on conditions.</p>
+          <img src="/assets/img/code snippets/control statements.png" alt="JavaScript Control Statement"
+            class="img-fluid rounded shadow-sm mt-3">
+        </div>
+      </div>
+
+      <!-- Snippet 2: Operators -->
+      <div class="col-md-6">
+        <div class="snippet-card p-4 rounded shadow-lg" style="border-left: 5px solid #388e3c;" data-aos="fade-left">
+          <h4 class="mb-3 text-success">Operators</h4>
+          <p>This snippet shows how <strong>arithmetic and comparison operators</strong> work in JavaScript, allowing calculations and logical checks within a program.</p>
+          <img src="/assets/img/code snippets/operators.png" alt="JavaScript Operators"
+            class="img-fluid rounded shadow-sm mt-3">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .snippets-section {
+    background: #f4f6f8;
+    color: #222;
+    border-top: 2px solid #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+  }
+
+  .snippet-card {
+    background: #fff;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .snippet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .snippets-section h2 {
+    color: #00bcd4;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .snippet-card h4 {
+    font-weight: 600;
+  }
+
+  .snippet-card img {
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+  }
+</style>
+
+ <!-- ======= Tools Section ======= -->
+<section id="tools" class="tools py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-4 fw-bold text-white">Tools & Technologies</h2>
+    <p class="text-white-50 fst-italic mb-5">Technologies and tools I frequently use in web development.</p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- HTML -->
+      <div class="col-4 col-md-2">
+        <div class="tool-card">
+          <img src="assets/img/icons/html.png" alt="HTML Icon">
+          <p>HTML</p>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="col-4 col-md-2">
+        <div class="tool-card">
+          <img src="assets/img/icons/css.png" alt="CSS Icon">
+          <p>CSS</p>
+        </div>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="col-4 col-md-2">
+        <div class="tool-card">
+          <img src="assets/img/icons/bootstrap.png" alt="Bootstrap Icon">
+          <p>Bootstrap</p>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="col-4 col-md-2">
+        <div class="tool-card">
+          <img src="assets/img/icons/javascript.png" alt="JavaScript Icon">
+          <p>JavaScript</p>
+        </div>
+      </div>
+
+      <!-- WordPress -->
+      <div class="col-4 col-md-2">
+        <div class="tool-card">
+          <img src="assets/img/icons/wordpress.png" alt="WordPress Icon">
+          <p>WordPress</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section background */
+  #tools {
+    background: linear-gradient(135deg, #0073aa, #00c6ff);
+    border-radius: 15px;
+  }
+
+  #tools h2 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
+  #tools p {
+    color: #e0f7ff;
+  }
+
+  /* Tool card style */
+  .tool-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tool-card img {
+    max-height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease;
+  }
+
+  .tool-card p {
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+  }
+
+  .tool-card:hover img {
+    transform: rotate(-10deg) scale(1.1);
+  }
+</style>
+
+
+   <!-- ======= Services Section ======= -->
+<section id="services" class="services py-5" style="background:#f1f5f9;">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-5 fw-bold" style="color:#0073aa;">What I Offer</h2>
+    <div class="row gy-4 justify-content-center">
+
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="service-card p-4 rounded shadow-lg">
+          <i class="bi bi-window display-4 service-icon text-gradient"></i>
+          <h5 class="mt-3 fw-bold">Responsive Design</h5>
+          <p>Creating mobile-friendly, visually appealing websites using HTML, CSS, and Bootstrap.</p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="service-card p-4 rounded shadow-lg">
+          <i class="bi bi-wordpress display-4 service-icon text-gradient"></i>
+          <h5 class="mt-3 fw-bold">WordPress Development</h5>
+          <p>Customizing and building websites for blogs, portfolios, and business needs.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="service-card p-4 rounded shadow-lg">
+          <i class="bi bi-braces display-4 service-icon text-gradient"></i>
+          <h5 class="mt-3 fw-bold">Frontend Development</h5>
+          <p>Adding interactivity and functionality using JavaScript and modern frameworks.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card {
+    background: linear-gradient(135deg, #ffffff, #e0f7ff);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 115, 170, 0.3);
+  }
+
+  .service-icon {
+    transition: transform 0.4s ease, color 0.4s ease;
+    background: linear-gradient(135deg, #0073aa, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .service-card:hover .service-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  .service-card h5 {
+    color: #0073aa;
+  }
+
+  .service-card p {
+    color: #333;
+  }
+</style>
+
+
+   <!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials py-5" style="background:#f8f9fa;">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-5 fw-bold" style="color:#0073aa;">Feedback</h2>
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 700,
+          "autoplay": { "delay": 5000 },
+          "slidesPerView": "auto",
+          "spaceBetween": 30,
+          "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+        }
+      </script>
+
+      <div class="swiper-wrapper">
+
+        <!-- Testimonial 1 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-lg rounded">
+            <i class="bi bi-chat-quote-fill display-4 mb-3 text-gradient"></i>
+            <h5 class="fw-bold">Trainer at FCA</h5>
+            <p class="text-muted fst-italic">
+              "Eula shows remarkable progress in web design and has successfully completed several Bootstrap and WordPress projects."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-lg rounded">
+            <i class="bi bi-chat-quote-fill display-4 mb-3 text-gradient"></i>
+            <h5 class="fw-bold">Peer Review</h5>
+            <p class="text-muted fst-italic">
+              "Working with Eula is inspiring. She is dedicated, creative, and always eager to improve her skills."
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-card {
+    background: linear-gradient(135deg, #ffffff, #e0f7ff);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 115, 170, 0.2);
+  }
+
+  .testimonial-card i {
+    background: linear-gradient(135deg, #0073aa, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.4s ease;
+  }
+
+  .testimonial-card:hover i {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  .swiper-pagination-bullet {
+    background: #0073aa;
+    opacity: 0.7;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #00c6ff;
+  }
+</style>
+
+   <!-- ======= Contact Section ======= -->
+<section id="contact" class="contact py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <p class="text-center mb-5">Feel free to reach out via email or connect on LinkedIn. I’d love to hear from you!</p>
+
+    <div class="row justify-content-center">
+      <!-- Email Contact Card -->
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm text-center p-4 h-100">
+          <i class="bi bi-envelope-fill display-4 text-primary mb-3"></i>
+          <h5>Email Me</h5>
+          <p class="text-muted">Send me a message directly.</p>
+          <a href="mailto:eula@example.com" class="btn btn-primary"><i class="bi bi-send"></i> Send Email</a>
+        </div>
+      </div>
+
+      <!-- LinkedIn Contact Card -->
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm text-center p-4 h-100">
+          <i class="bi bi-linkedin display-4 text-info mb-3"></i>
+          <h5>Connect on LinkedIn</h5>
+          <p class="text-muted">Let’s connect professionally.</p>
+          <a href="https://www.linkedin.com/in/shirlette-eula-0bb3a4376/" target="_blank" class="btn btn-info text-white"><i class="bi bi-box-arrow-up-right"></i> Visit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact .card {
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .contact .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+</style>
+
+ <!-- ======= Footer ======= -->
+<footer id="footer" class="footer py-5" style="background: linear-gradient(135deg, #0073aa, #00c6ff); color:#fff;">
+  <div class="container text-center">
+    <p class="mb-3">© 2025 <strong>MyPortfolio</strong> | Designed by <a href="https://linkedin.com/in/shirlette-eula-0bb3a4376/" target="_blank" rel="noopener" class="text-white text-decoration-underline">Eula Shalet</a></p>
+    
+    <div class="social-links mt-3">
+      <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/shirlette-eula-0bb3a4376/" target="_blank" rel="noopener" class="social-icon"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-links a {
+    display: inline-block;
+    margin: 0 8px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: #fff;
+    color: #0073aa;
+  }
+
+  footer a.text-decoration-underline:hover {
+    color: #00c6ff;
+  }
+</style>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Live Code Background JS -->
+  <script>
+    const canvas = document.getElementById('code-background');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const columns = Math.floor(width / 20);
+    const drops = Array(columns).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0,0,0,0.05)";
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = "#0ff";
+      ctx.font = "20px Inconsolata";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = String.fromCharCode(33 + Math.random() * 94);
+        ctx.fillText(text, i * 20, drops[i] * 20);
+        if (drops[i] * 20 > height || Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
+
+</html>
